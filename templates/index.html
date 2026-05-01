@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXEL GREG PARREÑO | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white font-sans selection:bg-blue-500">
+
+    <nav class="fixed top-0 w-full bg-gray-900/90 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-black tracking-tighter">
+                AXEL GREG <span class="text-blue-500">PARREÑO</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 font-bold text-[10px] tracking-widest">
+                <a href="#home" class="hover:text-blue-400 transition">HOME</a>
+                <a href="#about" class="hover:text-blue-400 transition">ABOUT</a>
+                <a href="#certs" class="hover:text-blue-400 transition">CERTS</a>
+                <a href="#projects" class="hover:text-blue-400 transition">PROJECTS</a>
+                <a href="#contact" class="hover:text-blue-400 transition">CONTACT</a>
+            </div>
+
+            <div class="md:hidden text-2xl cursor-pointer" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-b border-gray-800">
+            <div class="flex flex-col space-y-4 p-6 font-bold text-[10px] tracking-widest">
+                <a href="#home" onclick="toggleMobileMenu()" class="hover:text-blue-400 transition">HOME</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="hover:text-blue-400 transition">ABOUT</a>
+                <a href="#certs" onclick="toggleMobileMenu()" class="hover:text-blue-400 transition">CERTS</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="hover:text-blue-400 transition">PROJECTS</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-blue-400 transition">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="h-[70vh] flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight hero-glow uppercase tracking-tighter">
+            Building Innovation <br>Through <span class="text-blue-500 italic text-3xl md:text-5xl block mt-2">Scalable Solutions</span>
+        </h1>
+        <div class="text-green-400 font-mono tracking-widest uppercase text-sm">> System Online_</div>
+    </section>
+
+    <section id="about" class="max-w-7xl mx-auto px-6 py-16 border-t border-gray-800">
+        <h2 class="text-3xl font-bold mb-12 inline-block border-b-4 border-blue-500 pb-2 uppercase tracking-tighter">About Me</h2>
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+            <div class="space-y-6">
+                <img src="/static/img/profile.jpg" alt="Axel Greg Parreño" 
+                     class="w-full max-w-sm aspect-[3/4] object-cover rounded-3xl shadow-2xl border-2 border-gray-700">
+                <div>
+                    <h3 class="text-3xl font-black uppercase">Axel Greg Parreño</h3>
+                    <p class="text-blue-400 font-bold tracking-widest uppercase text-xs">Entry-Level IT Professional</p>
+                </div>
+            </div>
+            <div class="text-gray-400 leading-relaxed text-lg space-y-6">
+                <p>I am <span class="text-white font-bold">Axel Greg Parreño</span>, a recent Information Technology graduate from the University of Cebu. Having successfully transitioned from my academic journey to the professional sphere, I bring a unique blend of technical proficiency and real-world problem-solving experience.</p>
+                <p>My background is defined by a dual focus: building robust applications using <span class="text-white font-semibold">ASP.NET Core and C#</span>, and managing complex technical infrastructure. My experience in high-pressure telecommunications support, as well as being a Tier III Technical Support Specialist, has sharpened my ability to deliver efficient solutions under strict deadlines.</p>
+                <p>Currently, I am <span class="text-blue-400 font-bold uppercase text-sm tracking-widest">Open to Professional Opportunities</span>. Whether it's in full-stack development, network administration, or IT operations, I am eager to apply my diverse skill set to help a team build and maintain innovative, scalable systems.</p>
+                <p class="pt-4 border-t border-gray-800">
+                    <span class="text-xs uppercase tracking-widest text-gray-500 block mb-2">Core Expertise</span>
+                    <span class="text-white italic text-base">ASP.NET Core MVC/Razor, Java, Python, C#, MySQL, Networking (CCNA), cPanel eMail Management, and Advanced Hardware Troubleshooting.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="certs" class="max-w-7xl mx-auto px-6 py-16 border-t border-gray-800">
+        <h2 class="text-3xl font-bold mb-10 inline-block border-b-4 border-blue-500 pb-2 uppercase tracking-tighter">Certifications</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="flex items-center space-x-4 bg-gray-800/30 p-4 rounded-xl border border-gray-700 hover:border-blue-500 transition group cursor-pointer" onclick="openModal('/static/img/ccna1.pdf', 'CCNA: Introduction to Networks')">
+                <div class="w-16 h-16 bg-blue-600/20 rounded flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition"><i class="fas fa-file-pdf text-2xl"></i></div>
+                <div>
+                    <span class="text-blue-400 font-bold uppercase text-[10px] block mb-1">Cisco Networking Academy</span>
+                    <p class="text-sm font-bold text-white group-hover:text-blue-400 underline underline-offset-4 decoration-gray-600">CCNA: Introduction to Networks</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 bg-gray-800/30 p-4 rounded-xl border border-gray-700 hover:border-blue-500 transition group cursor-pointer" onclick="openModal('/static/img/ccna2.pdf', 'CCNA: Switching & Routing')">
+                <div class="w-16 h-16 bg-blue-600/20 rounded flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition"><i class="fas fa-file-pdf text-2xl"></i></div>
+                <div>
+                    <span class="text-blue-400 font-bold uppercase text-[10px] block mb-1">Cisco Networking Academy</span>
+                    <p class="text-sm font-bold text-white group-hover:text-blue-400 underline underline-offset-4 decoration-gray-600">CCNA: Switching, Routing, and Wireless</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 bg-gray-800/30 p-4 rounded-xl border border-gray-700 hover:border-blue-500 transition group cursor-pointer" onclick="openModal('/static/img/cPanelProfCert.pdf', 'cPanel Professional Certification')">
+                <div class="w-16 h-16 bg-orange-600/20 rounded flex items-center justify-center text-orange-500 group-hover:bg-orange-600 group-hover:text-white transition"><i class="fas fa-file-pdf text-2xl"></i></div>
+                <div>
+                    <span class="text-blue-400 font-bold uppercase text-[10px] block mb-1">cPanel University</span>
+                    <p class="text-sm font-bold text-white group-hover:text-blue-400 underline underline-offset-4 decoration-gray-600">Professional Certification Exam</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 bg-gray-800/30 p-4 rounded-xl border border-gray-700 hover:border-blue-500 transition group cursor-pointer" onclick="openModal('/static/img/CertPartAcc.pdf', 'cPanel Certified Partner Accreditation')">
+                <div class="w-16 h-16 bg-orange-600/20 rounded flex items-center justify-center text-orange-500 group-hover:bg-orange-600 group-hover:text-white transition"><i class="fas fa-file-pdf text-2xl"></i></div>
+                <div>
+                    <span class="text-blue-400 font-bold uppercase text-[10px] block mb-1">cPanel University</span>
+                    <p class="text-sm font-bold text-white group-hover:text-blue-400 underline underline-offset-4 decoration-gray-600">Certified Partner Accreditation</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 bg-gray-800/30 p-4 rounded-xl border border-gray-700 hover:border-blue-500 transition group cursor-pointer" onclick="openModal('/static/img/WHMSysAd1.pdf', 'WHM System Administrator I')">
+                <div class="w-16 h-16 bg-orange-600/20 rounded flex items-center justify-center text-orange-500 group-hover:bg-orange-600 group-hover:text-white transition"><i class="fas fa-file-pdf text-2xl"></i></div>
+                <div>
+                    <span class="text-blue-400 font-bold uppercase text-[10px] block mb-1">cPanel University</span>
+                    <p class="text-sm font-bold text-white group-hover:text-blue-400 underline underline-offset-4 decoration-gray-600">WHM System Administrator I</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 bg-gray-800/30 p-4 rounded-xl border border-gray-700 hover:border-blue-500 transition group cursor-pointer" onclick="openModal('/static/img/WHMSysAd2.pdf', 'WHM System Administrator I')">
+                <div class="w-16 h-16 bg-orange-600/20 rounded flex items-center justify-center text-orange-500 group-hover:bg-orange-600 group-hover:text-white transition"><i class="fas fa-file-pdf text-2xl"></i></div>
+                <div>
+                    <span class="text-blue-400 font-bold uppercase text-[10px] block mb-1">cPanel University</span>
+                    <p class="text-sm font-bold text-white group-hover:text-blue-400 underline underline-offset-4 decoration-gray-600">WHM System Administrator II</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="max-w-7xl mx-auto px-6 py-16 border-t border-gray-800">
+        <h2 class="text-3xl font-bold mb-10 inline-block border-b-4 border-blue-500 pb-2 uppercase tracking-tighter">Recent Projects</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="group bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:scale-[1.02] transition-transform p-6">
+                <h3 class="text-xl font-bold mb-2 uppercase text-white">Sports Store App</h3>
+                <p class="text-gray-400 text-sm mb-4">A retro-themed e-commerce app built with ASP.NET Core MVC, and EF Core. Features shopping cart and checkout functionality.</p>
+                <a href="https://github.com/PDF-F1L3/SportsStore.git" target="_blank" class="text-blue-400 font-bold text-xs tracking-widest hover:underline">VIEW CODE _</a>
+            </div>
+            <div class="group bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:scale-[1.02] transition-transform p-6">
+                <h3 class="text-xl font-bold mb-2 uppercase text-white">Tic-Tac-Toe</h3>
+                <p class="text-gray-400 text-sm mb-4">A simple implementation of the classic Tic-Tac-Toe game using ASP.NET CORE Razor Pages. Player vs AI is also implemented.</p>
+                <a href="https://github.com/PDF-F1L3/Tic-Tac-Toe.git" target="_blank" class="text-blue-400 font-bold text-xs tracking-widest hover:underline">VIEW CODE _</a>
+            </div>
+            <div class="group bg-gray-800 rounded-3xl overflow-hidden border border-gray-700 hover:scale-[1.02] transition-transform p-6">
+                <h3 class="text-xl font-bold mb-2 uppercase text-white">RESUMATE</h3>
+                <p class="text-gray-400 text-sm mb-4">An AI-powered resume analyzer that provides personalized feedback and suggestions for improvement.</p>
+                <a href="https://app.resumate.ph/" target="_blank" class="text-blue-400 font-bold text-xs tracking-widest hover:underline">VIEW WEBSITE _</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-gray-900 border-t border-gray-800 text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl font-black mb-4 uppercase">Let's Connect</h2>
+            <p class="text-gray-400 mb-8">Currently open to IT entry-level and junior developer roles.</p>
+            <div class="text-blue-400 font-mono text-lg mb-12 select-all">
+                Reach me directly at: <span class="text-white underline">axelgregtolero@gmail.com</span>
+                <p>or alternatively, here: </p> <span class="text-white underline">axelgregparreno@gmail.com</span>
+            </div>
+            <div class="flex justify-center space-x-12">
+                <a href="https://www.linkedin.com/in/axelparreno/" target="_blank" class="text-4xl text-gray-400 hover:text-blue-500 transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/PDF-F1L3" target="_blank" class="text-4xl text-gray-400 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-gray-800">
+        <p class="text-[10px] text-gray-600 uppercase tracking-widest">&copy; 2026 Axel Greg Parreño. All Rights Reserved.</p>
+    </footer>
+
+    <div id="certModal" class="hidden fixed inset-0 z-[200] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4" onclick="closeModal()">
+        <div class="relative w-full max-w-5xl h-[90vh] flex flex-col" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modalTitle" class="text-white text-xl font-bold tracking-widest uppercase"></h3>
+                <button class="text-white text-4xl leading-none hover:text-blue-500 transition" onclick="closeModal()">&times;</button>
+            </div>
+            <iframe id="modalPdf" src="" class="flex-1 w-full rounded-lg border border-gray-700 bg-white"></iframe>
+        </div>
+    </div>
+
+    <div id="chat-container" class="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
+        <div id="chat-window" class="hidden w-[330px] h-[450px] bg-gray-900 border border-gray-800 rounded-3xl flex-col shadow-2xl overflow-hidden mb-4">
+            <div class="bg-blue-600 p-4 flex justify-between items-center">
+                <span class="font-bold text-xs uppercase tracking-widest text-white">Portfolio AI</span>
+                <button onclick="toggleChat()" class="text-white text-xl leading-none">&times;</button>
+            </div>
+            <div id="chat-log" class="flex-1 overflow-y-auto p-4 space-y-4 text-xs">
+                <div class="bg-gray-800 p-3 rounded-2xl rounded-tl-none max-w-[85%] text-gray-300 italic">Hi! I'm Axel's assistant. Ask me about his tech stack or his recent internship tasks!</div>
+            </div>
+            <div class="p-4 bg-gray-800/30 flex space-x-2">
+                <input type="text" id="user-input" onkeypress="handleKey(event)" placeholder="Type a message..." class="flex-1 bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-xs outline-none focus:border-blue-500 text-white">
+                <button id="send-btn" onclick="sendMessage()" class="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700 transition"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button onclick="toggleChat()" class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-xl hover:scale-105 transition">
+            <i class="fas fa-comment-dots text-2xl text-white"></i>
+        </button>
+    </div>
+
+    <script>
+    // MOBILE MENU TOGGLE
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    }
+
+    // Modal Logic
+    function openModal(pdfSrc, title) {
+        const modal = document.getElementById('certModal');
+        const modalPdf = document.getElementById('modalPdf');
+        document.getElementById('modalTitle').innerText = title;
+        modalPdf.src = pdfSrc + "#toolbar=0&navpanes=0";
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('certModal').classList.add('hidden');
+        document.getElementById('modalPdf').src = "";
+        document.body.style.overflow = 'auto';
+    }
+
+    // Chatbot UI Logic
+    function toggleChat() {
+        const windowDiv = document.getElementById('chat-window');
+        windowDiv.classList.toggle('hidden');
+        windowDiv.classList.toggle('flex');
+    }
+
+    function handleKey(e) { if (e.key === 'Enter') sendMessage(); }
+
+    async function sendMessage() {
+        const inputField = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+        const chatLog = document.getElementById('chat-log');
+        const message = inputField.value.trim();
+
+        if (!message || sendBtn.disabled) return;
+
+        // Disable inputs while processing
+        sendBtn.disabled = true;
+        inputField.disabled = true;
+
+        // 1. Append User Message
+        chatLog.innerHTML += `<div class="flex justify-end mb-4"><div class="bg-blue-600 p-3 rounded-2xl rounded-tr-none max-w-[85%] text-white font-bold">${message}</div></div>`;
+        inputField.value = '';
+        chatLog.scrollTop = chatLog.scrollHeight;
+
+        // 2. Append "Thinking" Indicator (with a unique ID to remove later)
+        const tempId = "thinking-" + Date.now();
+        chatLog.innerHTML += `
+            <div id="${tempId}" class="flex justify-start mb-4 animate-pulse">
+                <div class="bg-gray-800 p-3 rounded-2xl rounded-tl-none max-w-[85%] text-gray-500 italic font-bold">
+                    Portfolio AI is thinking...
+                </div>
+            </div>`;
+        chatLog.scrollTop = chatLog.scrollHeight;
+
+        try {
+            const response = await fetch('/ask', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({message: message})
+            });
+            const data = await response.json();
+
+            // 3. Remove Thinking Indicator
+            const loader = document.getElementById(tempId);
+            if (loader) loader.remove();
+
+            // 4. Append actual Bot Response
+            chatLog.innerHTML += `<div class="flex justify-start mb-4"><div class="bg-gray-800 p-3 rounded-2xl rounded-tl-none max-w-[85%] text-gray-300 font-bold">${data.reply}</div></div>`;
+            
+        } catch (error) {
+            // Remove loader on error too
+            const loader = document.getElementById(tempId);
+            if (loader) loader.remove();
+            chatLog.innerHTML += `<div class="flex justify-center mb-4"><div class="bg-red-500/20 text-red-500 text-[10px] px-3 py-1 rounded-full border border-red-500/50">Connection Error</div></div>`;
+        } finally {
+            sendBtn.disabled = false;
+            inputField.disabled = false;
+            chatLog.scrollTop = chatLog.scrollHeight;
+            inputField.focus();
+        }
+    }
+
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
