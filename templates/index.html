@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axel Greg Parreño</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' }
+    if (localStorage.theme === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="min-h-screen antialiased">
+  <div class="site-shell">
+    <div class="noise-layer"></div>
+    <div class="grid-layer"></div>
+    <div class="geo-layer geo-layer-one"></div>
+    <div class="geo-layer geo-layer-two"></div>
+    <div class="line-art line-art-one"></div>
+    <div class="line-art line-art-two"></div>
+
+    <button onclick="toggleTheme()" class="theme-toggle md:!right-5 md:!top-5 md:!h-10 md:!w-10 md:!rounded-[10px] md:!text-sm" aria-label="Toggle theme">
+      <i id="theme-icon" class="fa-solid fa-moon md:!text-sm"></i>
+    </button>
+
+    <div class="relative z-10 flex w-full flex-col gap-6 px-4 py-5 sm:px-6 lg:block lg:px-8 lg:py-8">
+      <aside class="sidebar-shell w-full lg:fixed lg:left-0 lg:top-0 lg:h-screen lg:w-80 xl:w-96">
+        <div class="profile-card h-auto !flex !flex-col md:!h-auto md:!gap-5 md:!pb-8 lg:!h-[calc(100vh-5rem)] lg:!overflow-hidden lg:!gap-4 lg:!p-5 lg:!pb-10 lg:!mb-4 xl:!gap-5 xl:!p-6 xl:!pb-12">
+          <div class="profile-image-wrap md:!w-full md:!max-w-[180px] md:!self-center md:!-mt-3 lg:!max-w-[176px] xl:!max-w-[190px]">
+            <img src="/static/img/profile.jpg" alt="Portrait of Axel Greg Parreño" class="profile-image">
+          </div>
+
+          <div class="profile-copy md:!gap-2 lg:!gap-1.5 xl:!gap-2">
+            <p class="eyebrow">Portfolio / IT</p>
+            <h1>Axel Greg Parreño</h1>
+            <p class="role">Entry-Level IT Professional</p>
+            <p class="bio">
+              IT graduate focused on backend systems, network administration, infrastructure support, and practical web solutions.
+            </p>
+          </div>
+
+          <a href="/static/files/resume.pdf" target="_blank" class="brutal-button primary-button md:!mt-1 lg:w-full lg:max-w-full lg:box-border">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            <span>Download Resume</span>
+          </a>
+
+          <div class="md:mt-2 md:pb-2 lg:!-mt-3 lg:w-full xl:!-mt-2 xl:pb-3">
+            <div class="social-row md:!gap-x-4 md:!px-1 lg:w-full lg:max-w-full lg:justify-start" aria-label="Social links">
+              <a href="https://github.com/PDF-F1L3" target="_blank" class="social-button" aria-label="GitHub profile">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" class="social-button" aria-label="LinkedIn profile">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-panel lg:ml-80 xl:ml-96">
+        <section class="content-section about-section">
+          <div class="section-kicker">01</div>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-lede text-neutral-800 dark:text-stone-200">
+            Recent IT graduate with hands-on experience in ASP.NET Core, C#, Python, MySQL, system support, and server/network administration. Axel is building a strong foundation across backend development and infrastructure, with a practical interest in reliable web systems, clear troubleshooting, and tools that make technical work easier to maintain.
+          </p>
+        </section>
+
+        <section class="content-section">
+          <div class="section-kicker">02</div>
+          <h2 class="section-title">Skills</h2>
+
+          <div class="skills-grid">
+            <article class="skill-card">
+              <div class="icon-block"><i class="fa-solid fa-layer-group"></i></div>
+              <h3>ASP.NET Core</h3>
+              <p>Builds structured web applications with MVC patterns, routing, and server-side workflows.</p>
+            </article>
+            <article class="skill-card">
+              <div class="icon-block"><i class="fa-solid fa-code"></i></div>
+              <h3>C#</h3>
+              <p>Uses C# for backend logic, application features, and clean object-oriented implementation.</p>
+            </article>
+            <article class="skill-card">
+              <div class="icon-block"><i class="fa-brands fa-python"></i></div>
+              <h3>Python</h3>
+              <p>Applies Python for scripting, automation, problem solving, and AI-assisted web tooling.</p>
+            </article>
+            <article class="skill-card">
+              <div class="icon-block"><i class="fa-solid fa-database"></i></div>
+              <h3>MySQL</h3>
+              <p>Works with relational data, schema design basics, queries, and application persistence.</p>
+            </article>
+            <article class="skill-card">
+              <div class="icon-block"><i class="fa-solid fa-network-wired"></i></div>
+              <h3>Networking (CCNA)</h3>
+              <p>Understands routing, switching, wireless fundamentals, addressing, and network troubleshooting.</p>
+            </article>
+            <article class="skill-card">
+              <div class="icon-block"><i class="fa-solid fa-server"></i></div>
+              <h3>cPanel</h3>
+              <p>Supports hosting environments, WHM administration, accounts, domains, and service configuration.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-kicker">03</div>
+          <h2 class="section-title">Certifications</h2>
+
+          <div class="cert-grid">
+            <button class="cert-card" data-pdf="/static/img/ccna1.pdf">
+              <span class="icon-block"><i class="fa-solid fa-certificate"></i></span>
+              <span class="cert-copy">
+                <span class="cert-provider">Cisco Networking Academy</span>
+                <span class="cert-title">CCNA: Introduction to Networks</span>
+                <span class="cert-desc">Covers network models, IP addressing, Ethernet, and core connectivity fundamentals.</span>
+              </span>
+            </button>
+            <button class="cert-card" data-pdf="/static/img/ccna2.pdf">
+              <span class="icon-block"><i class="fa-solid fa-route"></i></span>
+              <span class="cert-copy">
+                <span class="cert-provider">Cisco Networking Academy</span>
+                <span class="cert-title">CCNA: Switching, Routing, Wireless</span>
+                <span class="cert-desc">Focuses on switching concepts, routing operations, WLANs, and network services.</span>
+              </span>
+            </button>
+            <button class="cert-card" data-pdf="/static/img/cPanelProfCert.pdf">
+              <span class="icon-block"><i class="fa-solid fa-terminal"></i></span>
+              <span class="cert-copy">
+                <span class="cert-provider">cPanel University</span>
+                <span class="cert-title">cPanel Professional Certification</span>
+                <span class="cert-desc">Validates cPanel account management, hosting controls, domains, files, and email tools.</span>
+              </span>
+            </button>
+            <button class="cert-card" data-pdf="/static/img/CertPartAcc.pdf">
+              <span class="icon-block"><i class="fa-solid fa-handshake"></i></span>
+              <span class="cert-copy">
+                <span class="cert-provider">cPanel University</span>
+                <span class="cert-title">cPanel Partner Accreditation</span>
+                <span class="cert-desc">Represents familiarity with cPanel partner workflows, platform value, and support basics.</span>
+              </span>
+            </button>
+            <button class="cert-card" data-pdf="/static/img/WHMSysAd1.pdf">
+              <span class="icon-block"><i class="fa-solid fa-user-shield"></i></span>
+              <span class="cert-copy">
+                <span class="cert-provider">cPanel University</span>
+                <span class="cert-title">WHM System Administrator I</span>
+                <span class="cert-desc">Covers foundational WHM administration, server accounts, packages, and hosting operations.</span>
+              </span>
+            </button>
+            <button class="cert-card" data-pdf="/static/img/WHMSysAd2.pdf">
+              <span class="icon-block"><i class="fa-solid fa-gears"></i></span>
+              <span class="cert-copy">
+                <span class="cert-provider">cPanel University</span>
+                <span class="cert-title">WHM System Admin II</span>
+                <span class="cert-desc">Builds on WHM administration with deeper server management and operational configuration.</span>
+              </span>
+            </button>
+          </div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-kicker">04</div>
+          <h2 class="section-title">Projects</h2>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <h3>Sports Store</h3>
+              <p>ASP.NET MVC e-commerce system with a product catalog, cart workflow, and database-backed structure for practicing real storefront patterns.</p>
+              <div class="tag-row">
+                <span class="tag">ASP.NET</span>
+                <span class="tag">EF Core</span>
+                <span class="tag">MySQL</span>
+              </div>
+              <a href="https://github.com/PDF-F1L3/SportsStore.git" target="_blank">View Code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </article>
+
+            <article class="project-card">
+              <h3>Tic-Tac-Toe</h3>
+              <p>Razor Pages game with player-versus-AI logic, simple state handling, and a clean browser-based interaction flow.</p>
+              <div class="tag-row">
+                <span class="tag">C#</span>
+                <span class="tag">Razor</span>
+              </div>
+              <a href="https://github.com/PDF-F1L3/Tic-Tac-Toe.git" target="_blank">View Code <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </article>
+
+            <article class="project-card">
+              <h3>RESUMATE</h3>
+              <p>AI resume analyzer designed to review resume content and surface practical feedback for stronger job applications.</p>
+              <div class="tag-row">
+                <span class="tag">AI</span>
+                <span class="tag">Web</span>
+              </div>
+              <a href="https://app.resumate.ph/" target="_blank">Visit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section contact-section">
+          <div class="section-kicker">05</div>
+          <h2 class="section-title">Contact</h2>
+          <p class="contact-note">
+            Open to entry-level IT opportunities, backend development work, infrastructure support roles, and collaborative projects where dependable systems matter.
+          </p>
+          <div class="contact-list">
+            <a href="mailto:axelgregtolero@gmail.com">axelgregtolero@gmail.com</a>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          © 2026 Axel Greg Parreño. All rights reserved.
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <div id="cert-modal" class="cert-modal hidden" aria-hidden="true">
+    <div class="cert-modal-panel">
+      <div class="cert-modal-header">
+        <span>Certification Preview</span>
+        <button onclick="closeCertModal()" aria-label="Close certification preview">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <iframe id="cert-frame" title="Certification PDF preview"></iframe>
+    </div>
+  </div>
+
+  <div class="chat-wrap md:!right-6 md:!bottom-6">
+    <button onclick="toggleChat()" class="chat-button md:!h-[3.25rem] md:!w-[3.25rem] md:!rounded-[14px] md:!text-base" aria-label="Open portfolio AI chat">
+      <i class="fa-solid fa-message md:!text-base"></i>
+    </button>
+
+    <div id="chat" class="chat-panel hidden">
+      <div class="chat-header">
+        <span>Chat with Axel</span>
+        <button onclick="toggleChat()" aria-label="Close chat"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div id="chat-log" class="chat-log">
+        <div class="bot">Hi! Ask me about Axel.</div>
+      </div>
+
+      <div class="chat-input-row">
+        <input id="msg" placeholder="Ask a question..." autocomplete="off">
+        <button onclick="sendMsg()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function applyThemeIcon() {
+      const icon = document.getElementById('theme-icon');
+      const isDark = document.documentElement.classList.contains('dark');
+      icon.className = isDark ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+    }
+
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.theme = isDark ? 'dark' : 'light';
+      applyThemeIcon();
+    }
+
+    applyThemeIcon();
+
+    function toggleChat() {
+      document.getElementById('chat').classList.toggle('hidden');
+    }
+
+    function appendBubble(className, text, id) {
+      const bubble = document.createElement('div');
+      bubble.className = className;
+      if (id) bubble.id = id;
+      bubble.textContent = text;
+      document.getElementById('chat-log').appendChild(bubble);
+      return bubble;
+    }
+
+    function appendThinkingBubble(id) {
+      const bubble = document.createElement('div');
+      bubble.className = 'bot thinking-bubble';
+      bubble.id = id;
+      bubble.setAttribute('aria-label', 'Axel is typing');
+      bubble.innerHTML = `
+        <span class="typing-indicator" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      `;
+      document.getElementById('chat-log').appendChild(bubble);
+      return bubble;
+    }
+
+    async function sendMsg() {
+      const input = document.getElementById('msg');
+      const log = document.getElementById('chat-log');
+      const message = input.value.trim();
+      if (!message) return;
+
+      appendBubble('user', message);
+      const tempId = 'temp-' + Date.now();
+      appendThinkingBubble(tempId);
+      input.value = '';
+
+      try {
+        const res = await fetch('/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message })
+        });
+
+        const data = await res.json();
+        document.getElementById(tempId).remove();
+        appendBubble('bot', data.reply);
+      } catch {
+        document.getElementById(tempId).textContent = 'Error connecting.';
+      }
+
+      log.scrollTop = log.scrollHeight;
+    }
+
+    document.getElementById('msg').addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') sendMsg();
+    });
+
+    document.querySelectorAll('[data-pdf]').forEach((card) => {
+      card.addEventListener('click', () => {
+        document.getElementById('cert-frame').src = card.dataset.pdf;
+        const modal = document.getElementById('cert-modal');
+        modal.classList.remove('hidden');
+        modal.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeCertModal() {
+      const modal = document.getElementById('cert-modal');
+      document.getElementById('cert-frame').src = '';
+      modal.classList.add('hidden');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    document.getElementById('cert-modal').addEventListener('click', (event) => {
+      if (event.target.id === 'cert-modal') closeCertModal();
+    });
+  </script>
+</body>
+</html>
